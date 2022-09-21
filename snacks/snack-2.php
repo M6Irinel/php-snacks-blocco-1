@@ -21,7 +21,7 @@ $age = $_GET['age'];
     <header>
         <section>
             <div class="container text-center p-4">
-                <h1>Snack 1</h1>
+                <h1>Snack 2</h1>
             </div>
         </section>
     </header>
