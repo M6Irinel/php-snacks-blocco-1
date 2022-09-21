@@ -59,9 +59,10 @@ $snacks = [
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="./assets/style.css">
 </head>
 
-<body>
+<body class="bg-light d-flex flex-column h-min-100vh">
 
   <header>
     <section>
@@ -71,7 +72,7 @@ $snacks = [
     </section>
   </header>
 
-  <main class="pb-5 mb-5">
+  <main class="mb-5">
     <section>
       <?php foreach ($snacks as $key => $value) : ?>
         <div class="container shadow mb-4 rounded p-0">
@@ -84,6 +85,13 @@ $snacks = [
     </section>
   </main>
 
+  <footer class="mt-auto">
+    <section>
+      <div class="container bg-dark text-white p-3 text-center">
+        <p class="m-0"><span class="text-danger">♥</span> grazie per la visione del sito <strong>snack PHP</strong> ___ by. <strong>Boolean</strong> <span class="text-danger">♥</span></p>
+      </div>
+    </section>
+  </footer>
 
 </body>
 
