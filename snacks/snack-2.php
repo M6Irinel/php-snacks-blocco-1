@@ -23,16 +23,16 @@ $age = $_GET['age'];
         <section>
             <div class="container text-center p-4 position-relative">
                 <div class="position-absolute">
-                    <a class="btn btn-info" href="../index.php">← menu snacks</a>
+                    <a class="btn btn-info" href="../index.php">← menu</a>
                 </div>
-                <h1>Snack 2</h1>
+                <h1>Snack 2 <span class="bg-primary text-white px-2 rounded shadow">PHP</span></h1>
             </div>
         </section>
     </header>
 
     <main>
         <section>
-            <div class="container d-flex justify-content-center shadow rounded p-3">
+            <div class="container d-flex justify-content-center shadow rounded p-3 border">
                 <form class="d-flex flex-column w-50" action="./snack-2.php">
                     <div class="form-group">
                         <label for="name">Inserisci il nome per favore</label>
@@ -52,6 +52,7 @@ $age = $_GET['age'];
                 </form>
             </div>
         </section>
+
         <section>
             <div class="container text-center shadow p-0 mt-5">
                 <?php if (strlen($name) > 3 && strpos($mail, '@') && strpos($mail, '.') && number_format($age)) : ?>

@@ -30,9 +30,9 @@ $ar_text = explode('.', $big_text);
         <section>
             <div class="container text-center p-4 position-relative">
                 <div class="position-absolute">
-                    <a class="btn btn-info" href="../index.php">← menu snacks</a>
+                    <a class="btn btn-info" href="../index.php">← menu</a>
                 </div>
-                <h1>Snack 5</h1>
+                <h1>Snack 5 <span class="bg-primary text-white px-2 rounded shadow">PHP</span></h1>
             </div>
         </section>
     </header>
@@ -40,8 +40,8 @@ $ar_text = explode('.', $big_text);
     <main>
         <section>
             <div class="container p-0">
-                <ul class="list-group shadow rounded">
-                    <?php foreach ($ar_text as $k => $v) : ?>
+                <ul class="list-group shadow rounded border">
+                    <?php foreach ($ar_text as $v) : ?>
                         <li class="list-group-item list-group-item-action">
                             <?php echo $v; ?>.
                         </li>

@@ -42,9 +42,9 @@ $db = [
         <section>
             <div class="container text-center p-4 position-relative">
                 <div class="position-absolute">
-                    <a class="btn btn-info" href="../index.php">← menu snacks</a>
+                    <a class="btn btn-info" href="../index.php">← menu</a>
                 </div>
-                <h1>Snack 6</h1>
+                <h1>Snack 6 <span class="bg-primary text-white px-2 rounded shadow">PHP</span></h1>
             </div>
         </section>
     </header>
@@ -53,15 +53,15 @@ $db = [
         <section>
             <div class="container p-0">
                 <?php foreach ($db as $k => $v) : ?>
-                    <div class="p-4 shadow rounded mx-2 mb-3">
+                    <div class="p-3 shadow rounded border mb-3">
                         <h3><?php echo $k; ?></h3>
 
                         <ul class="list-group">
-                            <?php for ($i = 0; $i < count($v); $i++) : ?>
+                            <?php foreach ($v as $v2) : ?>
                                 <li class="list-group-item list-group-item-action">
-                                    <?php echo "{$v[$i]['name']} {$v[$i]['lastname']}" ?>
+                                    <?php echo "{$v2['name']} {$v2['lastname']}" ?>
                                 </li>
-                            <?php endfor; ?>
+                            <?php endforeach; ?>
                         </ul>
                     </div>
                 <?php endforeach; ?>

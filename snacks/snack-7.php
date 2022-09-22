@@ -42,16 +42,16 @@ $alunni = [
         <section>
             <div class="container text-center p-4 position-relative">
                 <div class="position-absolute">
-                    <a class="btn btn-info" href="../index.php">← menu snacks</a>
+                    <a class="btn btn-info" href="../index.php">← menu</a>
                 </div>
-                <h1>Snack 7</h1>
+                <h1>Snack 7 <span class="bg-primary text-white px-2 rounded shadow">PHP</span></h1>
             </div>
         </section>
     </header>
 
     <main>
         <section>
-            <div class="container p-4 shadow rounded">
+            <div class="container p-4 shadow rounded border">
                 <table class="w-100">
                     <thead>
                         <tr class="border-bottom">
@@ -61,17 +61,17 @@ $alunni = [
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($alunni as $k => $v) {
+                        <?php foreach ($alunni as $v) {
                             $media = 0;
                         ?>
                             <tr class="border-bottom">
                                 <td class="border-right"><?php echo "{$v['nome']} {$v['cognome']}" ?></td>
                                 <td class="border-right">
-                                    <?php for ($i = 0; $i < count($v['voti']); $i++) {
-                                        $media += $v['voti'][$i] / count($v['voti']);
+                                    <?php foreach ($v['voti'] as $v2) {
+                                        $media += $v2 / count($v['voti']);
                                     ?>
                                         <span class="px-2 py-1 mr-1 d-inline-block">
-                                            <?php echo $v['voti'][$i]; ?>
+                                            <?php echo $v2; ?>
                                         </span>
                                     <?php } ?>
                                 </td>

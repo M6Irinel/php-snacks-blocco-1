@@ -67,15 +67,15 @@ $snacks = [
   <header>
     <section>
       <div class="container text-center p-4">
-        <h1>Snacks</h1>
+        <h1>Snacks <span class="bg-primary text-white px-2 rounded shadow">PHP</span></h1>
       </div>
     </section>
   </header>
 
   <main class="mb-5">
     <section>
-      <?php foreach ($snacks as $key => $value) : ?>
-        <div class="container shadow mb-4 rounded p-0">
+      <?php foreach ($snacks as $value) : ?>
+        <div class="container shadow mb-4 rounded p-0 border">
           <a href="./snacks/snack-<?= $value['link']; ?>.php" class="text-decoration-none p-3 d-block">
             <h3><?= $value['title']; ?></h3>
             <p><?= $value['description']; ?></p>

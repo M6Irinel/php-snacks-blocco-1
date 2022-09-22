@@ -38,18 +38,18 @@ $partite = [
         <section>
             <div class="container text-center p-4 position-relative">
                 <div class="position-absolute">
-                    <a class="btn btn-info" href="../index.php">← menu snacks</a>
+                    <a class="btn btn-info" href="../index.php">← menu</a>
                 </div>
-                <h1>Snack 1</h1>
+                <h1>Snack 1 <span class="bg-primary text-white px-2 rounded shadow">PHP</span></h1>
             </div>
         </section>
     </header>
 
     <main>
         <section>
-            <div class="container shadow rounded">
+            <div class="container shadow rounded border">
                 <ol class="p-4">
-                    <?php foreach ($partite as $key => $value) : ?>
+                    <?php foreach ($partite as $value) : ?>
                         <li class="my-2">
                             <?php echo "{$value['casa']} - {$value['ospite']}" ?>
                             |

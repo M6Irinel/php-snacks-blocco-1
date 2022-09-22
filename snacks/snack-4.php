@@ -27,28 +27,30 @@ while (count($numbers) <= 15) {
         <section>
             <div class="container text-center p-4 position-relative">
                 <div class="position-absolute">
-                    <a class="btn btn-info" href="../index.php">← menu snacks</a>
+                    <a class="btn btn-info" href="../index.php">← menu</a>
                 </div>
-                <h1>Snack 4</h1>
+                <h1>Snack 4 <span class="bg-primary text-white px-2 rounded shadow">PHP</span></h1>
             </div>
         </section>
     </header>
 
     <main>
         <section>
-            <div class="container p-4 shadow rounded text-center">
+            <div class="container p-4 shadow rounded border text-center">
                 <h3 class="mb-4">15 numeri random</h3>
-                <?php foreach ($numbers as $k => $v) : ?>
-                    <?php if ($v % 2 == 0) : ?>
-                        <span class="bg-primary p-2 ml-1 text-center font-weight-bold text-white" title="PARI">
-                            <?php echo $v; ?>
-                        </span>
-                    <?php else : ?>
-                        <span class="bg-danger p-2 ml-1 text-center font-weight-bold text-white" title="DISPARI">
-                            <?php echo $v; ?>
-                        </span>
-                    <?php endif; ?>
-                <?php endforeach; ?>
+                <div class="d-flex flex-wrap justify-content-center" style="gap: 5px;">
+                    <?php foreach ($numbers as $v) : ?>
+                        <?php if ($v % 2 == 0) : ?>
+                            <span class="bg-primary p-2 ml-1 text-center font-weight-bold text-white" title="PARI">
+                                <?php echo $v; ?>
+                            </span>
+                        <?php else : ?>
+                            <span class="bg-danger p-2 ml-1 text-center font-weight-bold text-white" title="DISPARI">
+                                <?php echo $v; ?>
+                            </span>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                </div>
             </div>
         </section>
     </main>

@@ -58,9 +58,9 @@ $posts = [
         <section>
             <div class="container text-center p-4 position-relative">
                 <div class="position-absolute">
-                    <a class="btn btn-info" href="../index.php">← menu snacks</a>
+                    <a class="btn btn-info" href="../index.php">← menu</a>
                 </div>
-                <h1>Snack 3</h1>
+                <h1>Snack 3 <span class="bg-primary text-white px-2 rounded shadow">PHP</span></h1>
             </div>
         </section>
     </header>
@@ -69,16 +69,16 @@ $posts = [
         <section>
             <div class="container p-0">
                 <?php foreach ($posts as $k => $v) : ?>
-                    <div class="mb-5 shadow rounded">
+                    <div class="mb-5 shadow rounded border">
                         <h3 class="px-4 pt-2 d-flex">Data degli post <span class="ml-auto"><?php echo $k; ?></span></h3>
                         <ul class="list-group p-2">
-                            <?php for ($i = 0; $i < count($v); $i++) : ?>
+                            <?php foreach ($v as $v2) : ?>
                                 <li class="list-group-item">
-                                    <h5><?php echo $v[$i]['title']; ?></h5>
-                                    <h4 class="text-center"><?php echo $v[$i]['author']; ?></h4>
-                                    <p><?php echo $v[$i]['text']; ?></p>
+                                    <h5><?php echo $v2['title']; ?></h5>
+                                    <h4 class="text-center"><?php echo $v2['author']; ?></h4>
+                                    <p><?php echo $v2['text']; ?></p>
                                 </li>
-                            <?php endfor; ?>
+                            <?php endforeach; ?>
                         </ul>
                     </div>
                 <?php endforeach; ?>
