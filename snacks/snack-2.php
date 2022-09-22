@@ -1,8 +1,8 @@
 <?php
 
-$name = $_GET['name'];
-$mail = $_GET['mail'];
-$age = $_GET['age'];
+$name = isset($_GET['name']) ? $_GET['name'] : null;
+$mail = isset($_GET['mail']) ? $_GET['mail'] : null;
+$age = isset($_GET['age']) ? $_GET['age'] : null;
 
 ?>
 
