@@ -25,75 +25,49 @@ $alunni = [
 
 ?>
 
-<!doctype html>
-<html lang="en">
+<?php
+$style = '.';
+$title = 'Snack 7';
+$tabTitle = $title;
+$btn = true;
+include '../assets/components/header.php';
+?>
 
-<head>
-    <title>Snack 7</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="../assets/style.css">
-</head>
-
-<body class="bg-light d-flex flex-column h-min-100vh">
-
-    <header>
-        <section>
-            <div class="container text-center p-4 position-relative">
-                <div class="position-absolute">
-                    <a class="btn btn-info" href="../index.php">← menu</a>
-                </div>
-                <h1>Snack 7 <span class="bg-primary text-white px-2 rounded shadow">PHP</span></h1>
-            </div>
-        </section>
-    </header>
-
-    <main>
-        <section>
-            <div class="container p-4 shadow rounded border">
-                <table class="w-100">
-                    <thead>
+<main>
+    <section>
+        <div class="container p-4 shadow rounded border">
+            <table class="w-100">
+                <thead>
+                    <tr class="border-bottom">
+                        <th class="border-right">Nome alunno</th>
+                        <th class="border-right">Voti</th>
+                        <th>Media Voto</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($alunni as $v) {
+                        $media = 0;
+                    ?>
                         <tr class="border-bottom">
-                            <th class="border-right">Nome alunno</th>
-                            <th class="border-right">Voti</th>
-                            <th>Media Voto</th>
+                            <td class="border-right"><?php echo "{$v['nome']} {$v['cognome']}" ?></td>
+                            <td class="border-right">
+                                <?php foreach ($v['voti'] as $v2) {
+                                    $media += $v2 / count($v['voti']);
+                                ?>
+                                    <span class="px-2 py-1 mr-1 d-inline-block">
+                                        <?php echo $v2; ?>
+                                    </span>
+                                <?php } ?>
+                            </td>
+                            <td>
+                                <?php echo (int)$media; ?>
+                            </td>
                         </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach ($alunni as $v) {
-                            $media = 0;
-                        ?>
-                            <tr class="border-bottom">
-                                <td class="border-right"><?php echo "{$v['nome']} {$v['cognome']}" ?></td>
-                                <td class="border-right">
-                                    <?php foreach ($v['voti'] as $v2) {
-                                        $media += $v2 / count($v['voti']);
-                                    ?>
-                                        <span class="px-2 py-1 mr-1 d-inline-block">
-                                            <?php echo $v2; ?>
-                                        </span>
-                                    <?php } ?>
-                                </td>
-                                <td>
-                                    <?php echo (int)$media; ?>
-                                </td>
-                            </tr>
-                        <?php } ?>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-    </main>
+                    <?php } ?>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</main>
 
-    <footer class="mt-auto">
-        <section>
-            <div class="container bg-dark text-white p-3 text-center">
-                <p class="m-0"><span class="text-danger">♥</span> grazie per la visione del sito <strong>snack PHP</strong> ___ by. <strong>Boolean</strong> <span class="text-danger">♥</span></p>
-            </div>
-        </section>
-    </footer>
-
-</body>
-
-</html>
+<?php include '../assets/components/footer.php' ?>

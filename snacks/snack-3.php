@@ -41,60 +41,33 @@ $posts = [
 
 ?>
 
-<!doctype html>
-<html lang="en">
+<?php
+$style = '.';
+$title = 'Snack 3';
+$tabTitle = $title;
+$btn = true;
+include '../assets/components/header.php';
+?>
 
-<head>
-    <title>Snack 3</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="../assets/style.css">
-</head>
-
-<body class="bg-light d-flex flex-column h-min-100vh">
-
-    <header>
-        <section>
-            <div class="container text-center p-4 position-relative">
-                <div class="position-absolute">
-                    <a class="btn btn-info" href="../index.php">← menu</a>
+<main>
+    <section>
+        <div class="container p-0">
+            <?php foreach ($posts as $k => $v) : ?>
+                <div class="mb-5 shadow rounded border">
+                    <h3 class="px-4 pt-2 d-flex">Data degli post <span class="ml-auto"><?php echo $k; ?></span></h3>
+                    <ul class="list-group p-2">
+                        <?php foreach ($v as $v2) : ?>
+                            <li class="list-group-item">
+                                <h5><?php echo $v2['title']; ?></h5>
+                                <h4 class="text-center"><?php echo $v2['author']; ?></h4>
+                                <p><?php echo $v2['text']; ?></p>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
                 </div>
-                <h1>Snack 3 <span class="bg-primary text-white px-2 rounded shadow">PHP</span></h1>
-            </div>
-        </section>
-    </header>
+            <?php endforeach; ?>
+        </div>
+    </section>
+</main>
 
-    <main>
-        <section>
-            <div class="container p-0">
-                <?php foreach ($posts as $k => $v) : ?>
-                    <div class="mb-5 shadow rounded border">
-                        <h3 class="px-4 pt-2 d-flex">Data degli post <span class="ml-auto"><?php echo $k; ?></span></h3>
-                        <ul class="list-group p-2">
-                            <?php foreach ($v as $v2) : ?>
-                                <li class="list-group-item">
-                                    <h5><?php echo $v2['title']; ?></h5>
-                                    <h4 class="text-center"><?php echo $v2['author']; ?></h4>
-                                    <p><?php echo $v2['text']; ?></p>
-                                </li>
-                            <?php endforeach; ?>
-                        </ul>
-                    </div>
-                <?php endforeach; ?>
-            </div>
-        </section>
-    </main>
-
-    <footer class="mt-auto">
-        <section>
-            <div class="container bg-dark text-white p-3 text-center">
-                <p class="m-0"><span class="text-danger">♥</span> grazie per la visione del sito <strong>snack PHP</strong> ___ by. <strong>Boolean</strong> <span class="text-danger">♥</span></p>
-            </div>
-        </section>
-    </footer>
-
-
-</body>
-
-</html>
+<?php include '../assets/components/footer.php' ?>

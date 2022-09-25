@@ -51,48 +51,25 @@ $snacks = [
 
 ?>
 
-<!doctype html>
-<html lang="en">
+<?php
+$tabTitle = 'Menu with snacks';
+$style = '';
+$title = 'Snacks';
+$btn = false;
+include './assets/components/header.php'
+?>
 
-<head>
-  <title>Menu for Snacks</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="./assets/style.css">
-</head>
-
-<body class="bg-light d-flex flex-column h-min-100vh">
-
-  <header>
-    <section>
-      <div class="container text-center p-4">
-        <h1>Snacks <span class="bg-primary text-white px-2 rounded shadow">PHP</span></h1>
+<main class="mb-5">
+  <section>
+    <?php foreach ($snacks as $value) : ?>
+      <div class="container shadow mb-4 rounded p-0 border">
+        <a href="./snacks/snack-<?= $value['link']; ?>.php" class="text-decoration-none p-3 d-block">
+          <h3><?= $value['title']; ?></h3>
+          <p><?= $value['description']; ?></p>
+        </a>
       </div>
-    </section>
-  </header>
+    <?php endforeach; ?>
+  </section>
+</main>
 
-  <main class="mb-5">
-    <section>
-      <?php foreach ($snacks as $value) : ?>
-        <div class="container shadow mb-4 rounded p-0 border">
-          <a href="./snacks/snack-<?= $value['link']; ?>.php" class="text-decoration-none p-3 d-block">
-            <h3><?= $value['title']; ?></h3>
-            <p><?= $value['description']; ?></p>
-          </a>
-        </div>
-      <?php endforeach; ?>
-    </section>
-  </main>
-
-  <footer class="mt-auto">
-    <section>
-      <div class="container bg-dark text-white p-3 text-center">
-        <p class="m-0"><span class="text-danger">♥</span> grazie per la visione del sito <strong>snack PHP</strong> ___ by. <strong>Boolean</strong> <span class="text-danger">♥</span></p>
-      </div>
-    </section>
-  </footer>
-
-</body>
-
-</html>
+<?php include './assets/components/footer.php' ?>
